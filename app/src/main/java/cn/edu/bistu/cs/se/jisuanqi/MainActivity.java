@@ -1,34 +1,38 @@
 package cn.edu.bistu.cs.se.jisuanqi;
 
 import android.content.DialogInterface;
-import android.content.pm.ActivityInfo;
-import android.content.res.Configuration;
+import android.content.Intent;
+
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Adapter;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import cn.edu.bistu.cs.se.jisuanqi.jisuanmokuai.Calculator;
 
 public class MainActivity extends AppCompatActivity {
+    List<String> LiShi=new ArrayList<>();
     int flag=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Configuration mConfiguration = this.getResources().getConfiguration(); //获取设置的配置信息
-        int ori = mConfiguration.orientation; //获取屏幕方向
-
-
-
-
-
 
         setContentView(R.layout.activity_main);
+        xuanzuo();
         final TextView textView=findViewById(R.id.resultText);
         final TextView StringText = (TextView) findViewById(R.id.StringText);
         final TextView resultText = (TextView) findViewById(R.id.resultText);
@@ -267,6 +271,7 @@ public class MainActivity extends AppCompatActivity {
 
                     if(flag==0){
                         double result= Calculator.conversion(s);
+                        LiShi.add(s+"="+result);
                         StringText.setText(result+"");
                         resultText.setText(result+"");}
                     else {
@@ -274,6 +279,7 @@ public class MainActivity extends AppCompatActivity {
                         String[] string=s.split("\\^");
                         double a=Double.parseDouble(string[0]);
                         double b=Double.parseDouble(string[1]);
+                        LiShi.add(s+"="+Math.pow(a,b));
                         StringText.setText(Math.pow(a,b)+"");
                         resultText.setText(Math.pow(a,b)+"");
 
@@ -507,6 +513,9 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
                     dialog.show();
+
+
+
                 }
             });
             //竖屏
@@ -560,5 +569,54 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
+        public void  xuanzuo(){
+        Button riqijisuan=findViewById(R.id.riqijisuan);
+        riqijisuan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,time_ca.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+        Button jisuanlishi=findViewById(R.id.jisuanlishi);
+
+
+        jisuanlishi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ListView listView=new ListView(MainActivity.this);
+                ArrayAdapter simpleAdapter = new ArrayAdapter(MainActivity.this,
+                        android.R.layout.simple_list_item_1,
+                        LiShi);
+                listView.setAdapter(simpleAdapter);
+
+
+                simpleAdapter.notifyDataSetChanged();
+                final AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
+                builder.setView(listView);
+                builder.setTitle("计算历史");
+                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                        Log.d("mytag","click");
+                    }
+                });
+                builder.create();
+                builder.show();
+            }
+        });
+        final Button huilv =findViewById(R.id.huilv);
+        huilv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,huilv.class);
+                startActivity(intent);
+            }
+        });
+    }
     }
 
