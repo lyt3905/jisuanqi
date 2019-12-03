@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".huilv">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="源货币"
+            android:layout_gravity="center"/>
+    <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/yuan"
+            android:gravity="center"
+            android:orientation="horizontal">
+        <RadioButton
+                android:id="@+id/CNY1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CNY"/>
+        <RadioButton
+                android:id="@+id/USD1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="USD"/>
+        <RadioButton
+                android:id="@+id/GBP1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GBP"/>
+
+
+
+    </RadioGroup>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="目标货币"
+            android:layout_gravity="center"/>
+    <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/mudi"
+            android:gravity="center"
+            android:orientation="horizontal">
+        <RadioButton
+                android:id="@+id/CNY2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CNY"/>
+        <RadioButton
+                android:id="@+id/USD2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="USD"/>
+        <RadioButton
+                android:id="@+id/GBP2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GBP"/>
+
+
+
+    </RadioGroup>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查询"
+            android:id="@+id/chaxun"
+            android:layout_gravity="center"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/xianshihuilv"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:hint="显示汇率"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/shurujine"
+            android:hint="输入源货币"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="转换"
+            android:id="@+id/zhuanhuan"
+            android:layout_gravity="center"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/zhuanhuanjieguo"
+            android:textSize="20sp"
+            android:hint="转换后的结果"/>
+
+</LinearLayout>
