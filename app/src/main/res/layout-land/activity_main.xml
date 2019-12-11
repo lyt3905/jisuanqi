@@ -15,7 +15,27 @@
             android:text="0"
             android:textSize="20sp" />
 
+    <LinearLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <Button
+                android:id="@+id/riqijisuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="日期计算"/>
+        <Button
+                android:id="@+id/huilv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="汇率计算"/>
+        <Button
+                android:id="@+id/jisuanlishi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="计算历史"/>
 
+    </LinearLayout>
     <TextView
             android:id="@+id/resultText"
             android:layout_width="match_parent"
