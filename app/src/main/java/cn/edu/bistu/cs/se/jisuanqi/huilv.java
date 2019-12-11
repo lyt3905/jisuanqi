@@ -47,6 +47,7 @@ public class huilv extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 api=s1+yuanhuobi+s2+mudihuobi+s3;
+                Log.d("mytag",api);
                 HttpUtil.sendOkHttpRequest(api, new Callback() {
                     @Override
                     public void onResponse(Call call, Response response) throws IOException {
@@ -119,7 +120,7 @@ public class huilv extends AppCompatActivity {
                         Log.d("mudihuobi",mudihuobi);
                         break;
                     case R.id.USD2:
-                        mudihuobi="CHY";
+                        mudihuobi="USD";
                         Log.d("mudihuobi",mudihuobi);
                         break;
                     case R.id.GBP2:

@@ -9,36 +9,40 @@
 
         <Button
         android:id="@+id/first_button"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="开始日期"/>
+        android:text="点击输入开始日期"/>
     <TextView
             android:layout_width="match_parent"
             android:layout_height="50sp"
+
+            android:hint="显示开始时间的地方"
             android:id="@+id/first_text"
 
             />
     <Button
             android:id="@+id/second_button"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="结束日期"/>
+            android:text="点击输入结束日期"/>
     <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="50sp"
+
+            android:hint="显示结束时间的地方"
             android:id="@+id/second_text"/>
 
     <Button
             android:id="@+id/jisuanriqi_button"
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="计算日期"/>
+            android:text="点击计算天数"/>
             />
     <TextView
             android:layout_width="match_parent"
             android:layout_height="50sp"
-            android:textSize="35sp"
+
+            android:hint="显示计算结果的地方"
             android:id="@+id/jisuanriqi_text"/>
 
 
